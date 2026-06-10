@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "LEIDER FABIAN NARVAEZ GUTIERREZ",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 6.6, "left": -6.8, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -9.6, "left": -187.16, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": -63.38, "left": 79.12, "attrs": {} },
+    { "type": "chip-gps-neo6m", "id": "chip1", "top": -66.18, "left": -158.4, "attrs": {} },
+    { "type": "chip-bmp280", "id": "chip2", "top": -37.38, "left": 216, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 252.74,
+      "left": 67.43,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "chip1:TX", "esp:16", "magenta", [ "h11.41", "v153.6" ] ],
+    [ "chip1:RX", "esp:17", "cyan", [ "v144", "h1.81", "v19.2" ] ],
+    [ "bb1:tp.25", "bb1:bp.25", "red", [ "v0.3", "h11.2", "v172.8" ] ],
+    [ "bb1:tn.25", "bb1:bn.25", "black", [ "h20.8", "v174" ] ],
+    [ "esp:3V3", "bb1:tp.1", "red", [ "h-19.05", "v-28.8", "h220.8" ] ],
+    [ "esp:GND.1", "bb1:bn.1", "black", [ "h-19.05", "v86.4", "h230.4" ] ],
+    [ "bb1:1t.e", "bb1:1b.f", "limegreen", [ "v0" ] ],
+    [ "bb1:2t.e", "bb1:2b.f", "yellow", [ "v0" ] ],
+    [ "esp:21", "bb1:1t.a", "limegreen", [ "h19.2", "v-9.6" ] ],
+    [ "esp:22", "bb1:2t.a", "yellow", [ "h0" ] ],
+    [ "oled1:GND", "bb1:bn.8", "black", [ "v0" ] ],
+    [ "oled1:VCC", "bb1:bp.9", "red", [ "v0" ] ],
+    [ "oled1:SCL", "bb1:2b.j", "gold", [ "v-76.8", "h-57.3" ] ],
+    [ "oled1:SDA", "bb1:1b.j", "green", [ "v-86.4", "h-38.33" ] ],
+    [ "chip1:VCC", "bb1:tp.2", "red", [ "h-9.6", "v-19.2", "h182.4" ] ],
+    [ "chip1:GND", "bb1:tn.3", "black", [ "h-19.2", "v-38.4", "h211.2" ] ],
+    [ "imu1:SDA", "bb1:1t.b", "green", [ "v-9.6", "h-67.12", "v67.2", "h-76.8", "v67.2" ] ],
+    [ "imu1:SCL", "bb1:2t.b", "gold", [ "v-19.2", "h-67.12", "v57.6", "h0", "v57.6" ] ],
+    [ "imu1:VCC", "bb1:tp.13", "red", [ "v-9.6", "h0.08" ] ],
+    [ "imu1:GND", "bb1:tn.14", "black", [ "v-19.2", "h19.28" ] ],
+    [ "chip2:VCC", "bb1:tp.16", "red", [ "h0", "v-9.6", "h0", "v0", "h-9.6" ] ],
+    [ "chip2:GND", "bb1:tn.17", "black", [ "h0" ] ],
+    [ "chip2:SDA", "bb1:1t.c", "green", [ "v0", "h11.41", "v124.8", "h-355.2", "v-9.6" ] ],
+    [ "chip2:SCL", "bb1:2t.c", "gold", [ "h21.01", "v105.6" ] ]
+  ],
+  "dependencies": {}
+}

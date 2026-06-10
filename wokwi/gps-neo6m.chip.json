@@ -1,0 +1,11 @@
+{
+  "name": "gps-neo6m",
+  "author": "LEIDER FABIAN NARVAEZ GUTIERREZ",
+  "pins": [
+    "VCC",
+    "GND",
+    "RX",
+    "TX"
+  ],
+  "controls": []
+}

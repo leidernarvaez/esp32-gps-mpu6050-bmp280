@@ -1,0 +1,9 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+TinyGPSPlus
+Adafruit MPU6050
+Adafruit Unified Sensor
+Adafruit BMP280 Library
+Adafruit BusIO
+U8g2

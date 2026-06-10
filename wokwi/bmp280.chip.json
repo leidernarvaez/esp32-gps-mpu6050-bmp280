@@ -1,0 +1,11 @@
+{
+  "name": "bmp280",
+  "author": "LEIDER FABIAN NARVAEZ GUTIERREZ",
+  "pins": [
+    "VCC",
+    "GND",
+    "SDA",
+    "SCL"
+  ],
+  "controls": []
+}
